@@ -4,7 +4,7 @@ public class Sample09P : MonoBehaviour
 {
     public GameObject targetGameObjectA;
 
-    public void Update()
+    void Update ()
     {
 
         Material[] materials = GameObject.FindObjectsOfType<Material>();

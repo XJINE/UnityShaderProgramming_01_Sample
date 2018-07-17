@@ -7,12 +7,12 @@ public class Sample09 : MonoBehaviour
 
     private MaterialPropertyBlock materialPropertyBlock;
 
-    public void Start()
+    void Start ()
     {
         this.materialPropertyBlock = new MaterialPropertyBlock();
     }
 
-    public void Update()
+    void Update ()
     {
 
         Material[] materials = GameObject.FindObjectsOfType<Material>();

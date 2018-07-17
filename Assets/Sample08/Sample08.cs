@@ -12,13 +12,13 @@ public class Sample08 : MonoBehaviour
     private int floatValueId;
     private int globalColorValueId;
 
-    public void Start()
+    void Start ()
     {
         this.floatValueId = Shader.PropertyToID("_FloatValue");
         this.globalColorValueId = Shader.PropertyToID("_GlobalColorValue");
     }
 
-    public void Update()
+    void Update ()
     {
         this.material.SetFloat("_FloatValue", this.floatValue);
         this.material.SetFloat(floatValueId, this.floatValue);

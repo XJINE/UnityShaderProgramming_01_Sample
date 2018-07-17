@@ -1,4 +1,4 @@
-﻿Shader "Unlit/Sample09P"
+﻿Shader "Sample/Sample09P"
 {
     SubShader
     {

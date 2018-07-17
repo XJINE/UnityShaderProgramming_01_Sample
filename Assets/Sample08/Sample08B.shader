@@ -1,4 +1,4 @@
-﻿Shader "Unlit/Sample08B"
+﻿Shader "Sample/Sample08B"
 {
     Properties
     {
