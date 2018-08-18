@@ -1,34 +1,28 @@
 ﻿using UnityEngine;
 
+[ExecuteInEditMode]
 public class Sample09 : MonoBehaviour
 {
-    public GameObject targetGameObjectA;
-    public GameObject targetGameObjectB;
+    public Material material;
 
-    private MaterialPropertyBlock materialPropertyBlock;
+    [Range(0, 1)]
+    public float floatValue;
+    public Color globalColorValue;
+
+    private int floatValueId;
+    private int globalColorValueId;
 
     void Start ()
     {
-        this.materialPropertyBlock = new MaterialPropertyBlock();
+        this.floatValueId = Shader.PropertyToID("_FloatValue");
+        this.globalColorValueId = Shader.PropertyToID("_GlobalColorValue");
     }
 
     void Update ()
     {
+        this.material.SetFloat("_FloatValue", this.floatValue);
+        this.material.SetFloat(floatValueId, this.floatValue);
 
-        Material[] materials = GameObject.FindObjectsOfType<Material>();
-
-        Debug.Log("MATERIAL_COUNT_IN_SCENE : " + materials.Length);
-
-        for (int i = 0; i < materials.Length; i++)
-        {
-            Debug.Log(materials[i].name);
-        }
-
-        // CASE:1
-        this.targetGameObjectA.GetComponent<Renderer>().material.SetFloat("_FloatValue", Random.value);
-
-        // CASE:2
-        //this.materialPropertyBlock.SetFloat("_FloatValue", Random.value);
-        //this.targetGameObjectA.GetComponent<Renderer>().SetPropertyBlock(this.materialPropertyBlock);
+        Shader.SetGlobalColor(globalColorValueId, this.globalColorValue);
     }
 }

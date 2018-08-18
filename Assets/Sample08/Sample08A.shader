@@ -2,11 +2,13 @@
 {
     Properties
     {
-        _FloatValue("Float Value", Range(0, 1)) = 1
+        _Color("Color", Color) = (1, 1, 1, 1)
     }
 
     SubShader
     {
+        ZTest Always
+
         Pass
         {
             CGPROGRAM
@@ -26,20 +28,18 @@
                 float4 vertex : SV_POSITION;
             };
 
-            v2f vert (appdata v)
+            fixed4 _Color;
+
+            v2f vert(appdata v)
             {
                 v2f o;
                 o.vertex = UnityObjectToClipPos(v.vertex);
                 return o;
             }
-            
-            float _FloatValue;
-            fixed4 _GlobalColorValue;
 
-            fixed4 frag (v2f i) : SV_Target
+            fixed4 frag(v2f i) : SV_Target
             {
-                fixed4 color = fixed4(_FloatValue, _FloatValue, _FloatValue, 1);
-                color *= _GlobalColorValue;
+                fixed4 color = _Color;
                 return color;
             }
 

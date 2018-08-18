@@ -1,8 +1,20 @@
-﻿Shader "Sample/Sample05"
+﻿Shader "Sample/Sample04"
 {
+    Properties
+    {
+        _Color("Color", Color) = (1, 0, 0, 1)
+    }
+
     SubShader
     {
-        Cull Off
+        Tags
+        {
+            "Queue" = "Transparent"
+            "RenderType" = "Transparent"
+        }
+
+        Blend SrcAlpha OneMinusSrcAlpha
+        //BlendOp Add
 
         Pass
         {
@@ -23,6 +35,8 @@
                 float4 vertex : SV_POSITION;
             };
 
+            fixed4 _Color;
+
             v2f vert(appdata v)
             {
                 v2f o;
@@ -32,8 +46,7 @@
 
             fixed4 frag(v2f i) : SV_Target
             {
-                fixed4 color = fixed4(1, 1, 1, 1);
-                return color;
+                return _Color;
             }
 
             ENDCG
