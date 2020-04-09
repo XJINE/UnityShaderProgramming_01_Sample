@@ -28,3 +28,11 @@ The following packages were added:
   com.unity.modules.androidjni@1.0.0
 The following packages were updated:
   com.unity.package-manager-ui from version 2.1.2 to 2.2.0
+
+=== Sun Mar 22 16:46:59 2020
+
+Packages were changed.
+Update Mode: updateDependencies
+
+The following packages were removed:
+  com.unity.package-manager-ui@2.2.0
