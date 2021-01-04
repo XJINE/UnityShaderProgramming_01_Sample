@@ -13,7 +13,7 @@
         {
             CGPROGRAM
 
-            #pragma vertex vert
+            #pragma vertex   vert
             #pragma fragment frag
 
             #include "UnityCG.cginc"

@@ -7,14 +7,14 @@
 
     SubShader
     {
-        ZTest LEqual
+        ZTest  LEqual
         Offset -1, -1
 
         Pass
         {
             CGPROGRAM
 
-            #pragma vertex vert
+            #pragma vertex   vert
             #pragma fragment frag
 
             #include "UnityCG.cginc"
